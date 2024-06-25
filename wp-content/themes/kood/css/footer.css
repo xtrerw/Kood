@@ -1,0 +1,41 @@
+:root{
+    --footer-color:#201f1f;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: baseline;
+    background: var(--footer-color);
+    color: #fff;
+    height: 50vh;
+}
+footer>div{
+    width: 300px;
+    margin-top: 5%;
+}
+/* informacion */
+/* titulo */
+.infor>h1{
+    cursor: default;
+    font-size: 50px;
+    color: var(--main-color);
+}
+/* email,localizacion */
+.infor>p>i{
+    margin-right: 10px;
+}
+.enlace{
+    color: #fff;
+    text-decoration: none;
+}
+/* contacto */
+.contacto{
+    text-align: center;
+}
+.contacto>div>a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    margin: 5px;
+}

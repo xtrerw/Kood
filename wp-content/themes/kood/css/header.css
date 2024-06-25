@@ -1,0 +1,129 @@
+/* 通用样式 */
+:root{
+   --main-color:#0056b3; 
+   --segundo-color:#0073aa;
+   --bg-color:#f8f8f8;
+   --bg-color-menu:#ffffff;
+   --titulo-color:#1992cb;
+}
+/* body */
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* header */
+.site-inner {
+    max-width: none;
+}
+
+#header {
+    background-color: var(--bg-color);
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#headerimg {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#headerimg > h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--main-color); /* 标题的颜色 */
+}
+
+#headerimg > h1 > a {
+    text-decoration: none;
+    color: inherit; /* 保持链接和标题一致的颜色 */
+}
+
+
+/* 主导航菜单样式 */
+.nav-menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none; /* 去掉默认列表样式 */
+}
+
+/* 导航菜单项样式 */
+.nav-menu ul {
+    display: flex; /* 使菜单项水平排列 */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* 去掉默认列表样式 */
+}
+
+/* 单个导航项的样式 */
+.nav-menu ul li {
+    margin: 0 15px; /* 控制菜单项之间的间距 */
+    position: relative;
+}
+
+/* 导航链接的样式 */
+.nav-menu ul li a {
+    color: var(--segundo-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px; /* 增加点击区域 */
+    display: block; /* 使链接占满整个 li */
+    text-align: center; /* 文本居中 */
+}
+
+/* 悬停时的效果 */
+.nav-menu ul li a:hover {
+    background-color: #0073aa;
+    color: #fff;
+}
+
+/* 下拉菜单的样式 */
+.nav-menu ul li ul {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    top: 100%; /* 下拉菜单从主菜单底部开始 */
+    left: 0;
+    background-color: var(--bg-color-menu);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none; /* 去掉列表符号 */
+    padding: 15px 0;
+    margin: 0;
+    min-width: 150px;
+    text-align: left; /* 文本左对齐 */
+    z-index: 1000;
+    opacity: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* 下拉菜单链接的样式 */
+.nav-menu ul li ul a {
+    padding: 10px 15px;
+    color: var(--segundo-color);
+    text-decoration: none;
+    white-space: nowrap; /* 防止文本换行 */
+    
+}
+
+/* 悬停时显示下拉菜单 */
+.nav-menu ul li:hover > ul {
+    opacity: 1;
+}
+
+/* 悬停时下拉菜单项的效果 */
+.nav-menu ul li ul a:hover {
+    background-color: #0073aa;
+    color: #fff;
+}

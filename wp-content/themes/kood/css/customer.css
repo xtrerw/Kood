@@ -1,0 +1,117 @@
+:root{
+    --def-titulo:#525252;
+    --def-text:#adacac;
+    --def-img:#737373;
+    --main-color:#0056b3; 
+    --segundo-color:#0073aa;
+    --bg-color:#f8f8f8;
+    --bg-color-menu:#ffffff;
+    --titulo-color:#1992cb;
+    --box-color:#013a57;
+    --descuento-color:orangered;
+}
+/* 让container居中 */
+.container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30vh;
+}
+.site-main{
+    display: flex;
+    padding: 0;
+}
+/* promocion标志 */
+.woocommerce span.onsale {
+    max-height: 1.5rem;
+    max-width: 1.5rem;
+    font-size: 15px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: var(--descuento-color);
+    color: #fff;
+    z-index: 9;
+}
+/* promocion标志位置 */
+.woocommerce ul.products li.product .onsale {
+    top: -10px;
+    right: -10px;
+}
+/* 删除before样式 */
+.woocommerce ul.products::before {
+    display: none;
+}
+/* 商品布局 */
+.woocommerce ul.products {
+    /* 让商品有空隙 */
+    display: grid;
+    justify-items: center;
+    width: 50%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+/* 修改商品卡片 */
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    width: 300px;
+    height: 400px;
+    opacity: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px var(--box-color);
+    padding: 0px;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* hover 卡片 */
+/* cambia border */
+.woocommerce-page ul.products li.product:hover {
+    box-shadow: 0 0 1px 5px var(--main-color);
+}
+/* cambia titulo */
+.woocommerce ul.products li.product:hover h2.woocommerce-loop-product__title  {
+    color: var(--main-color);
+}
+/* cambia precio */
+.woocommerce ul.products li.product:hover .price  {
+    color: var(--titulo-color);
+}
+/* 修改商品图片 */
+.woocommerce ul.products li.product a img {
+    width: 200px;
+    height: auto;
+    margin: 15px;
+}
+/* 修改商品标题的颜色 */
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+    color: var(--def-titulo); /* 你可以根据需要更改颜色值 */
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 修改商品价格的样式 */
+.woocommerce ul.products li.product .price {
+    color: var(--def-text); /* 你可以根据需要更改价格颜色值 */
+    font-size: 20px; /* 你可以根据需要更改字体大小 */
+    font-weight: bold; /* 你可以根据需要更改字体粗细 */
+    margin: 0;
+}
+
+/* 修改添加到购物车按钮的样式 */
+.woocommerce ul.products li.product .button {
+    background-color: var(--segundo-color); /* 你可以根据需要更改背景颜色 */
+    color: white; /* 你可以根据需要更改文字颜色 */
+    border-radius: 10px; /* 你可以根据需要更改按钮圆角 */
+    padding: 15px 30px; /* 你可以根据需要更改按钮的内边距 */
+    font-size: 15px;
+}
+/* sidebar */
+#sidebar {
+    display: none;
+}
+/* 给nav添加div */
+.add-div{
+    background: #000;
+}
