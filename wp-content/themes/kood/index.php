@@ -48,10 +48,11 @@ get_header(); ?>
 					</div>
 				</section>
 				<div class="productos-theme">
+					<h1>productos populares</h1>
 					<?php
 						// WooCommerce产品部分
 						if (class_exists('WooCommerce')) {
-							// 设置查询参数
+							// 设置查询参数,限制产品数量
 							$args = array(
 								'post_type' => 'product',
 								'posts_per_page' => 8
@@ -60,13 +61,13 @@ get_header(); ?>
 							$loop = new WP_Query($args);
 
 							if ($loop->have_posts()) {
-								echo '<ul class="products columns-4">';
+								echo '<div class="products columns-4">';
 
 								while ($loop->have_posts()) : $loop->the_post();
 									wc_get_template_part('content', 'product');
 								endwhile;
 
-								echo '</ul>';
+								echo '</div>';
 							} else {
 								echo __('No products found');
 							}
@@ -76,5 +77,9 @@ get_header(); ?>
 					?>
 				</div>
 			</main>
+
+			<div class="introduccion3">
+
+			</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
